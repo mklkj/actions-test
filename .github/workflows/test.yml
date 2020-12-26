@@ -27,4 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run test script
+        env:
+            TEST: ${{ secrets.TEST }}
+            DEPLOY: ${{ secrets.DEPLOY }}
         run: ./start.sh
