@@ -6,10 +6,8 @@ name: Test workflow
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches:
-      - master
-      - refs/tags/*
-
+    branches: [ master ]
+    tags: [ '*' ]
   pull_request:
     branches: [ master ]
 
