@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Starting...";
-priny "test: ";
+print "test: ";
 echo $TEST;
 echo $DEPLOY;
 echo "Finished."
