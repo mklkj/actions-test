@@ -4,8 +4,6 @@ on:
   push:
     branches: [ master ]
     tags: [ '*' ]
-  pull_request:
-    branches: [ master ]
   pull_request_target:
     branches: [ master ]
 
@@ -15,7 +13,7 @@ jobs:
     name: App distribution
     runs-on: ubuntu-latest
     environment: deploy
-    if: github.event_name == 'pull_request' && github.ref == 'refs/heads/master'
+    if: github.event_name != 'pull_request'
     steps:
       - uses: actions/checkout@v2
       - name: Run a multi-line script
