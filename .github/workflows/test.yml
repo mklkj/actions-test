@@ -30,6 +30,7 @@ jobs:
       - name: Run test script
         env:
             TEST: ${{ secrets.TEST }}
+            TEST2: ${{ secrets.TEST }}
         run: ./start.sh
 
         env:
