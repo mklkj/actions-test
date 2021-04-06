@@ -6,7 +6,20 @@ on:
 
 jobs:
   
-  deploy:
+  deploy-play:
+    name: Deploy to Google Play
+    runs-on: ubuntu-latest
+    environment: deploy
+    if: github.event_name == 'release' && github.event.action == 'created'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+  deploy-app-gallery:
+    name: Deploy to App Gallery
     runs-on: ubuntu-latest
     environment: deploy
     if: github.event_name == 'release' && github.event.action == 'created'
