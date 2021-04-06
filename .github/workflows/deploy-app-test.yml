@@ -1,0 +1,34 @@
+name: Deploy to app tests
+
+on:
+  push:
+    branches: [ master ]
+    tags: [ '*' ]
+  pull_request_target:
+    branches: [ master ]
+
+jobs:
+  
+  deploy-app-distribution:
+    name: Deploy to app distribution
+    runs-on: ubuntu-latest
+    environment: deploy
+    if: github.ref != 'refs/heads/develop'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+  deploy-app-center:
+    name: Deploy to app center
+    runs-on: ubuntu-latest
+    environment: deploy
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
