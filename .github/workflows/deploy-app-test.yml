@@ -13,7 +13,7 @@ jobs:
     name: Deploy to app distribution
     runs-on: ubuntu-latest
     environment: deploy
-    if: github.ref != 'refs/heads/develop'
+    if: github.ref != 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
       - name: Run a multi-line script
