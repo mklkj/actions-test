@@ -25,7 +25,6 @@ jobs:
     name: Deploy to app center
     runs-on: ubuntu-latest
     environment: deploy
-    if: github.ref != 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
       - name: Run a multi-line script
