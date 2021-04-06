@@ -1,15 +1,15 @@
 name: Deploy to app stores
 
 on:
-  workflow_dispatch:
+  release:
+    types: [created]
 
 jobs:
   
   deploy:
     runs-on: ubuntu-latest
     environment: deploy
-    if: github.event_name == 'workflow_dispatch' && contains(github.ref, 'refs/tags/')
-
+    if: github.event_name == 'release' && github.event.action == 'created'
     steps:
       - uses: actions/checkout@v2
       - name: Run a multi-line script
