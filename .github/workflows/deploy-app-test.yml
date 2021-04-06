@@ -2,9 +2,9 @@ name: Deploy to app tests
 
 on:
   push:
-    branches: [  ]
+    branches: [ '!*' ]
   pull_request_target:
-    branches: [  ]
+    branches: [ '!*' ]
 
 jobs:
   
