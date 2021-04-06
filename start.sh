@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "V7";
+echo "V10";
 echo "Starting...";
 echo -n "test: ";
 echo $TEST;
