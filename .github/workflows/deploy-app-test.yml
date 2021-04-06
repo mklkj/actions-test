@@ -4,13 +4,13 @@ on:
   push:
     branches: [ master ]
     tags: [ '*' ]
-  pull_request_target:
+  pull_request:
     branches: [ master ]
 
 jobs:
   
   deploy-app-distribution:
-    name: Deploy to app distribution
+    name: App distribution
     runs-on: ubuntu-latest
     environment: deploy
     if: github.ref == 'refs/heads/master'
@@ -22,7 +22,7 @@ jobs:
           echo test, and deploy your project.
 
   deploy-app-center:
-    name: Deploy to app center
+    name: App center
     runs-on: ubuntu-latest
     environment: deploy
     steps:
